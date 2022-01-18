@@ -1,0 +1,20 @@
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.note__button {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.new-note__button {
+    cursor: pointer;
+}
+
+.new-note__button:hover {
+    color: #ddd;
+}
