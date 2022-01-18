@@ -19,7 +19,7 @@ export const initialState = [{
     },
     {
         id: "i3",
-        name: "Startap",
+        name: "Startup",
         created: "January 18, 2022",
         category: "Idea",
         content: "Online exchange of musicians",
