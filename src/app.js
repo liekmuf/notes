@@ -2,7 +2,6 @@ import "./index.css"
 import { storage } from "./storage"
 
 const minNameLength = 3
-const minContentLength = 5
 
 const newNodeButton = document.querySelector("#new-note-btn")
 newNodeButton.addEventListener("click", () => {
