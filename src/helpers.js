@@ -20,6 +20,11 @@ export const dateToText = (date) => {
     return `${month} ${day}, ${year}`
 
 }
+export const reduceText = maxLength => text => {
+    const words = text.slice(0, maxLength).split(" ")
+    return words.slice(0, -1).join(" ")
+
+}
 
 export const isValid = minLength => formValue => formValue >= minLength
 export const getDatesFromText = (text) => {

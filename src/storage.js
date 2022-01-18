@@ -1,4 +1,4 @@
-import { dateToText, getDatesFromText, generateId } from "./helpers"
+import { dateToText, getDatesFromText, generateId, reduceText } from "./helpers"
 import { initialState } from "./initialState"
 
 
@@ -46,6 +46,7 @@ class Storage {
         this.updateSummary()
     }
     createNote(name, created, category, content, dates, id) {
+        const maxContentLength = 24
         const note = document.createElement("div")
         note.className = "row w-100 p-2 border border-secondaty pr-0 mb-2"
         note.id = id
@@ -53,7 +54,7 @@ class Storage {
         <div class="col-2 font-weight-bold"> ${name}</div>
         <div class="col-2">${created}</div>
         <div class="col-2">${category}</div>
-        <div class="col-3"> ${content.slice(0, 24)} </div>
+        <div class="col-3"> ${reduceText(maxContentLength)(content)} </div>
         <div class="col-2"> ${dates[0] || ""}</div>
         <div class="col-1">
             <img id="${id}-edit-btn" src="https://findicons.com/files/icons/2315/default_icon/128/pencil.png" class="note__button"></img>
