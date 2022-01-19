@@ -20,10 +20,13 @@ export const dateToText = (date) => {
     return `${month} ${day}, ${year}`
 
 }
+export const reduceText = maxLength => text => {
+    const words = text.slice(0, maxLength).split(" ")
+    return words.length === 1 ? words[0] : words.slice(0, -1).join(" ")
+}
 
-export const isValid = minLength => formValue => formValue >= minLength
 export const getDatesFromText = (text) => {
-    const regexp = /(0[1-9]|[12]\d|3[01])\/(0[1-9]|[12]\d|3[01])\/([12]\d{3})/g
-        //dd/mm/yyyy or mm/dd/yyyy format
+    const regexp = /(0[1-9]|[1-9]|[12]\d|3[01])\/(0[1-9]|[1-9]|[12]\d|3[01])\/([12]\d{3})/g
+
     return text.match(regexp) || []
 }
